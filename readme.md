@@ -1,29 +1,21 @@
-📘 Churn Prediction API – Production Ready (FastAPI + ML Model)
+📊 Churn Prediction API 
 
-A production-style machine learning API built with FastAPI, deployed on Render, and designed to predict customer churn from structured input data.
-The API exposes both single prediction and batch prediction endpoints with proper schemas, validation, logging, and CORS support.
+A production-ready FastAPI service for predicting customer churn.
+Includes single prediction, batch prediction, CORS support, logging, schemas, and real-time deployment using Docker + Render.
 
 🚀 Features
 
-FastAPI-based backend with automatic Swagger docs
-
-/predict → Predict churn for a single customer
-
-/predict/batch → Predict churn for multiple customers
-
-/health → Basic health-check endpoint
-
-CORS enabled for any frontend
-
-Modular code structure (schemas, model utils, logging)
-
-Pre-loaded ML model for fast predictions
-
-Fully containerized using Docker
-
-Deployed on Render
+✔ Model-loaded churn prediction
+✔ /predict for single record
+✔ /predict/batch for multiple records
+✔ Pydantic validation
+✔ Production logging
+✔ Clean folder structure
+✔ Dockerized deployment
+✔ Render hosting (free tier supported)
 
 📂 Project Structure
+
 churn_project/
 │
 ├── app/
@@ -49,8 +41,6 @@ numerical prediction
 human-readable label
 
 probability of prediction
-
-full probability distribution (if available)
 
 📌 API Endpoints
 1. Health Check
@@ -97,49 +87,39 @@ Request Body:
 
 🐳 Docker Deployment
 
-Build:
+Build: docker build -t churn-api .
 
-docker build -t churn-api .
+Run: docker run -p 8000:8000 churn-api
 
-
-Run:
-
-docker run -p 8000:8000 churn-api
 
 ☁️ Render Deployment
 
 Push project to GitHub
-
 Create a new Web Service on Render
-
 Set Start Command:
-
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 
+Deploy(Render)
 
-Deploy
+🚀 Live API URL
+🔗 https://churn-project-ekvu.onrender.com
 
-🧪 Testing the API
+Swagger Docs:
+👉 https://churn-project-ekvu.onrender.com/docs
 
-Once deployed, open:
-
-https://your-service.onrender.com/docs
-
-
-Use the interactive Swagger UI to test predictions.
 
 🛠️ Tech Stack
 
 FastAPI
-
-Python 3.11
-
+Python 3.11.11
 NumPy
-
 Scikit-Learn
-
 Uvicorn
-
 Docker
-
 Render Cloud
+
+🎯 Author
+
+Lalit Shinde (Lucky)
+B.Tech AIML | Machine Learning Engineer
+✉ GitHub: 
