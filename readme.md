@@ -113,6 +113,7 @@ Swagger Docs:
 FastAPI
 Python 3.11.11
 NumPy
+pandas
 Scikit-Learn
 Uvicorn
 Docker
@@ -123,3 +124,4 @@ Render Cloud
 Lalit Shinde (Lucky)
 B.Tech AIML | Machine Learning Engineer
 ✉ GitHub: 
+
