@@ -125,3 +125,144 @@ Lalit Shinde (Lucky)
 B.Tech AIML | Machine Learning Engineer
 ✉ GitHub: 
 
+
+Churn Prediction API
+
+A production-ready FastAPI service for customer churn prediction.
+Includes single/batch prediction, validation, logging, Dockerization, and Render deployment.
+
+Features
+
+FastAPI-based prediction service
+
+/predict → single prediction
+
+/predict/batch → batch prediction
+
+Pydantic models
+
+Logging included
+
+Docker support
+
+Deployed on Render
+
+Project Structure
+churn_project/
+│
+├── app/
+│   ├── main.py              # FastAPI app and routes
+│   ├── schemas.py           # Request/response models
+│   ├── model_utils.py       # Model loading and prediction
+│   ├── logger.py            # Logging setup
+│   └── __init__.py
+│
+├── models/
+│   └── churn_model.pkl      # Trained ML model
+│
+├── requirements.txt         # Dependencies
+├── Dockerfile               # Docker configuration
+└── Procfile (optional)      # Render start command
+
+API Endpoints
+Health Check
+GET /health
+
+
+Response:
+
+{ "status": "ok" }
+
+Single Prediction
+POST /predict
+
+
+Example request:
+
+{
+  "tenure": 5,
+  "monthly_charges": 65.4,
+  "total_charges": 324.5,
+  "senior_citizen": 0,
+  "gender": "Male",
+  "internet_service": "Fiber optic"
+}
+
+
+Example response:
+
+{
+  "prediction": 1,
+  "prediction_label": "Churn",
+  "probability_of_prediction": 0.82,
+  "probabilities": [0.18, 0.82]
+}
+
+Batch Prediction
+POST /predict/batch
+
+
+Format:
+
+{
+  "customers": [
+    { ... },
+    { ... }
+  ]
+}
+
+Docker
+
+Build:
+
+docker build -t churn-api .
+
+
+Run:
+
+docker run -p 8000:8000 churn-api
+
+Render Deployment
+
+Push repo to GitHub
+
+Create Render Web Service
+
+Start command:
+
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+
+Deploy
+
+Live URLs
+
+API:
+https://churn-project-ekvu.onrender.com
+
+Docs:
+https://churn-project-ekvu.onrender.com/docs
+
+Tech Stack
+
+FastAPI
+
+Python 3.11
+
+Scikit-Learn
+
+Pandas
+
+NumPy
+
+Uvicorn
+
+Docker
+
+Render
+
+Author
+
+Lalit Shinde (Lucky)
+Machine Learning Engineer — AIML
+
